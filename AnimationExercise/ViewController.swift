@@ -28,6 +28,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func toggleButton(_ sender: UIButton) {
+        if image.image == UIImage(named: "girl") {
+            UIView.transition(with: image, duration: 1.0, options: [.transitionFlipFromBottom], animations: {
+                self.image.image = UIImage(named: "boy")
+                self.genderLabel.text = "Boy"
+            })
+        } else {
+            UIView.transition(with: image, duration: 1.0, options: [.transitionFlipFromBottom], animations: {
+                self.image.image = UIImage(named: "girl")
+                self.genderLabel.text = "Girl"
+        })
         
     }
     
@@ -35,3 +45,4 @@ class ViewController: UIViewController {
     
 }
 
+}
