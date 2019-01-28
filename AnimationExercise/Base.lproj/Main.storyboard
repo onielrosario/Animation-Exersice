@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,78 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnimationExercise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-dg-kpc">
+                                <rect key="frame" x="18" y="328.5" width="339" height="31"/>
+                                <connections>
+                                    <action selector="resize:" destination="BYZ-38-t0r" eventType="valueChanged" id="h86-V0-1yD"/>
+                                </connections>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duck" translatesAutoresizingMaskIntoConstraints="NO" id="Er0-Z6-k61">
+                                <rect key="frame" x="137.5" y="188.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9iX-oD-xk9"/>
+                                    <constraint firstAttribute="width" secondItem="Er0-Z6-k61" secondAttribute="height" multiplier="1:1" id="QKp-e4-y6T"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-Ti-D4J">
+                                <rect key="frame" x="87.5" y="363.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Ua3-1V-g6v"/>
+                                    <constraint firstAttribute="width" constant="200" id="dft-0C-DZ5"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFL-8F-x6C">
+                                <rect key="frame" x="87.5" y="568.5" width="200" height="35"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Toggle">
+                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6rL-le-XnJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90p-Hk-frP">
+                                <rect key="frame" x="20" y="451" width="47.5" height="25"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <color key="textColor" red="0.43416045980000001" green="0.1153623693" blue="0.1206106381" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uWa-Ti-D4J" firstAttribute="centerX" secondItem="Y9u-dg-kpc" secondAttribute="centerX" id="E8X-Gc-qaU"/>
+                            <constraint firstItem="AFL-8F-x6C" firstAttribute="width" secondItem="uWa-Ti-D4J" secondAttribute="width" id="Gct-2q-RAO"/>
+                            <constraint firstItem="90p-Hk-frP" firstAttribute="centerY" secondItem="uWa-Ti-D4J" secondAttribute="centerY" id="HgV-6u-DtS"/>
+                            <constraint firstItem="AFL-8F-x6C" firstAttribute="centerX" secondItem="uWa-Ti-D4J" secondAttribute="centerX" id="ICk-Ks-hIy"/>
+                            <constraint firstItem="Y9u-dg-kpc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O8O-Ni-ATZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y9u-dg-kpc" secondAttribute="trailing" constant="20" id="RSx-JZ-oJ8"/>
+                            <constraint firstItem="Er0-Z6-k61" firstAttribute="centerX" secondItem="Y9u-dg-kpc" secondAttribute="centerX" id="Rw1-Wu-nSw"/>
+                            <constraint firstItem="uWa-Ti-D4J" firstAttribute="leading" secondItem="90p-Hk-frP" secondAttribute="trailing" constant="20" id="Tml-6n-yQg"/>
+                            <constraint firstItem="Y9u-dg-kpc" firstAttribute="top" secondItem="Er0-Z6-k61" secondAttribute="bottom" constant="40" id="YLL-2p-PPE"/>
+                            <constraint firstItem="uWa-Ti-D4J" firstAttribute="top" secondItem="Y9u-dg-kpc" secondAttribute="bottom" constant="5" id="ges-UD-M0S"/>
+                            <constraint firstItem="90p-Hk-frP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pJe-y7-pG2"/>
+                            <constraint firstItem="AFL-8F-x6C" firstAttribute="top" secondItem="uWa-Ti-D4J" secondAttribute="bottom" constant="5" id="xY0-0i-v0L"/>
+                            <constraint firstItem="Y9u-dg-kpc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xeq-mo-UOL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="duck" destination="Er0-Z6-k61" id="Lt7-fW-TG4"/>
+                        <outlet property="genderLabel" destination="90p-Hk-frP" id="8EX-iT-t6i"/>
+                        <outlet property="image" destination="uWa-Ti-D4J" id="Mu8-BU-YKl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="duck" width="512" height="512"/>
+        <image name="girl" width="243.36000061035156" height="243.36000061035156"/>
+    </resources>
 </document>
